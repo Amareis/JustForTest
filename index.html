@@ -3,6 +3,22 @@
 <body><div id="asd"></div>
 <script>
 document.querySelector('#asd').innerHTML = location.search.substr(1)
+var id, target, options;
+
+function success(pos) {
+  console.log(pos.coords);
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+navigator.geolocation.watchPosition(success, error, options);
 </script>
 </body>
 </html>
