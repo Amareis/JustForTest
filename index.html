@@ -1,12 +1,16 @@
 <html>
 <head></head>
-<body><div id="asd"></div>
+<body>
+  <div id="asd"></div>
+  <div id="zxc"></div>
 <script>
 document.querySelector('#asd').innerHTML = location.search.substr(1)
 var id, target, options;
 
 function success(pos) {
-  console.log(pos.coords.latitude + ' ' + pos.coords.longitude + ' +- ' + pos.coords.accuracy);
+  var s = pos.coords.latitude + ' ' + pos.coords.longitude + ' +- ' + pos.coords.accuracy
+  console.log(s);
+document.querySelector('#asd').innerHTML = s;
 }
 
 function error(err) {
