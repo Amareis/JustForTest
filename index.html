@@ -18,7 +18,7 @@ options = {
   maximumAge: 0
 };
 
-navigator.geolocation.watchPosition(success, error, options);
+setInterval(function() {navigator.geolocation.getCurrentPosition(success, error, options)}, 5000);
 </script>
 </body>
 </html>
